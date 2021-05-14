@@ -19,6 +19,7 @@ def avail_check(slot_data):
                 results = {}
                 results["name"] = item["name"]
                 results["address"] = item["address"]
+                results["pincode"] = item["pincode"]
                 results["date"] = session["date"]
                 results["vaccine"] = session["vaccine"]
                 result_slots.append(results)
@@ -44,9 +45,10 @@ while True:
 
     if(slot_list+slot_list2+slot_list3 != []):
         telegram_send.send(messages=[message])
+        print(slot_list+slot_list2+slot_list3)
+    else:
+        print("No Slots Available")
 
-
-    print(slot_list+slot_list2+slot_list3)
     time.sleep(10)
 
 
