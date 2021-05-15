@@ -18,6 +18,7 @@ def avail_check(slot_data):
             if(session["min_age_limit"] == 18 and session["available_capacity"] > 0):
                 results = {}
                 results["name"] = item["name"]
+                results["available_capacity"] = item["available_capacity"]
                 results["address"] = item["address"]
                 results["pincode"] = item["pincode"]
                 results["date"] = session["date"]
