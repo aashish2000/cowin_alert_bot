@@ -15,10 +15,10 @@ def avail_check(slot_data):
     for item in slot_data:
         for session in item["sessions"]:
             # if(session["min_age_limit"] == 18 and session["available_capacity"] > 0 and session["vaccine"]=="COVAXIN"):
-            if(session["min_age_limit"] == 18 and session["available_capacity"] > 0):
+            if(session["min_age_limit"] == 18 or session["available_capacity"] > 0):
                 results = {}
                 results["name"] = item["name"]
-                results["available_capacity"] = item["available_capacity"]
+                results["available_capacity"] = session["available_capacity"]
                 results["address"] = item["address"]
                 results["pincode"] = item["pincode"]
                 results["date"] = session["date"]
